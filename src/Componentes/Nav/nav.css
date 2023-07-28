@@ -1,0 +1,52 @@
+.navegador{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    background-color: aquamarine;
+}
+.icono{
+    height: 70px;
+    width: 50%;
+    float: left;
+    display: flex;
+    font-size: 25px;
+    padding: 5px;
+    background-color: aquamarine;
+}
+.icono a{
+    border: none;
+    margin: 5px;
+}
+
+.icono a:hover{
+    background: #1f1f38 !important;
+    color: #fff !important;
+    border-color: transparent;
+}
+
+
+.buscar-barra{
+    display: flex;
+    margin: auto;
+    padding: 1.5em;
+    justify-content: right;
+    width: 25%;
+}
+
+.buscar-barra input{
+    width: 100%;
+    background: transparent;
+    border-radius: 1.5em;
+    box-shadow: 0 0 0 0.2em #1f1f38 inset;
+    padding: 0.75em;
+    color: #f1f1f1;
+}
+
+
+.buscar-boton{
+    background: transparent;
+    border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
+    padding: 10px;
+    position: relative;
+    color: #fff;
+}
