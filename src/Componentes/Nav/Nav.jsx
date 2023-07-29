@@ -107,7 +107,7 @@ const Nav = () => {
                 color="inherit"
                 aria-label="open drawer"
                 sx={{ mr: 2 }}
-                href={`/Busqueda/${query}`}
+                href={`/movies/Busqueda/${query}`}
               >
                 <SearchIcon />
               </IconButton>

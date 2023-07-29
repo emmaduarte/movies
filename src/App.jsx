@@ -18,9 +18,9 @@ const App = () => {
         <Nav/>
           <Routes>
             
-            <Route path='/' exact element={<Listado/>}/>
-            <Route path='/Detalles/:title/:id' exact element={<Detalles/>}/>
-            <Route path='/Busqueda/:query' exact element={<Busqueda/>}/>
+            <Route path='/'  element={<Listado/>}/>
+            <Route path='/Detalles/:title/:id'  element={<Detalles/>}/>
+            <Route path='/Busqueda/:query'  element={<Busqueda/>}/>
             
           </Routes>
         
