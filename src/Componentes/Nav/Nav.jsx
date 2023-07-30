@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import CottageIcon from "@mui/icons-material/Cottage";
 import SearchIcon from "@mui/icons-material/Search";
+import { auto } from "@popperjs/core";
 
 {
   /*Estilos para el navbar de material*/
@@ -92,8 +93,27 @@ const Nav = () => {
               Movies
             </Typography>
 
-            <form action="" className="buscar-barra" onSubmit={handleSubmit}>
-              <input
+            <form action="" onSubmit={handleSubmit}>
+              <Search>
+                <IconButton
+                  size="large"
+                  edge="start"
+                  color="inherit"
+                  aria-label="open drawer"
+                  sx={{ m: auto }}
+                  href={`/movies/Busqueda/${query}`}
+                >
+                  <SearchIcon />
+                </IconButton>
+                <StyledInputBase
+                  placeholder="Search…"
+                  required
+                  autoComplete="off"
+                  inputProps={{ "aria-label": "search", required: true }}
+                  onChange={(event) => setQuery(event.target.value)}
+                />
+              </Search>
+              {/*<input
                 type="text"
                 name="search"
                 id="query"
@@ -110,12 +130,7 @@ const Nav = () => {
                 href={`/movies/Busqueda/${query}`}
               >
                 <SearchIcon />
-              </IconButton>
-              {/*<button className='buscar-boton' type='submit'>
-                <SearchIcon
-                href={`/Busqueda/${query}`}
-               />
-  </button>*/}
+  </IconButton>*/}
             </form>
           </Toolbar>
         </AppBar>
