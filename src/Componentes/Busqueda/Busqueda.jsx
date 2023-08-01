@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import './busqueda.css'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate} from 'react-router-dom'
 
 
 
@@ -11,6 +11,8 @@ const Busqueda = () => {
     const api = "575bcbc20d4282f26a0fda173e2568e3"
     const [peli, setPeli] = useState([])
     const [page, setPage] = useState(1)
+
+    const navigate = useNavigate()
 
     {/*Llamado a la api de busqueda */}
     useEffect(() =>{
@@ -33,7 +35,7 @@ const Busqueda = () => {
                       <div key={item.id}className="peliculas">
                         <img src={`${image_url + item.poster_path}`} alt="Imagen pelicula" className='image'/>
                         <div className='titulo'>{item.title}</div>
-                        <div><button className="boton1"><a href={`/movies/Detalles/${item.title}/${item.id}`}> Informacion</a></button></div>
+                        <div><button className="boton1" onClick={() => navigate(`/Detalles/${item.title}/${item.id}`)}> Informacion</button></div>
                       </div>))
                   }
                   
