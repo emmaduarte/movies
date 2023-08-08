@@ -14,12 +14,25 @@
 }
 .especificacion{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 1fr;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem
 
+}
+
+.lista{
+    display: inline;
+    padding: 0 0 0 10px;
+}
+.imagen{
+    width: 300px;
+    height: 450px;
+}
+
+.imagen img{
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    border-radius: 2%;
 }
 .pelicula{
     display: flex;
@@ -28,17 +41,31 @@
 
 .descripcion{
     margin: 0;
-    padding: 5px;
-    display: grid;
+    /*display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr;*/
     align-items: center;
     font-size: 20px;
     color: #ececff;
 }
+.logo{
+    height: 45px;
+    max-width: 100px;
+    object-fit:contain;
+    padding-bottom: 15px;
+}
 
-.descripcion div{
-    height: 100%;
+.logo-descripcion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-variant: small-caps;
+    padding-bottom: 15px;
+}
+
+.carusel-img{
+    border-radius: 15px;
 }
 
 .boton{
@@ -67,6 +94,15 @@
 }
 
 .video{
-    margin: 0 20px;
-    padding: 0 20px;
+    position: "relative";
+    padding-bottom: "56.25%"  /*16:9 */;
+    height: 0;    
+    margin: 0;
 }
+
+@media screen and (max-width: 767px){
+
+.daGMts {
+    grid-template-columns: repeat(3,1fr) !important;}
+}
+

@@ -66,10 +66,11 @@ const Nav = () => {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+  const [input, setInput] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    
   };
 
   return (
@@ -96,8 +97,8 @@ const Nav = () => {
               Movies
             </Typography>
 
-            <form action="" onSubmit={handleSubmit}>
-              <Search>
+            
+              <Search >
                 <IconButton
                   size="large"
                   edge="start"
@@ -113,10 +114,9 @@ const Nav = () => {
                   required
                   autoComplete="off"
                   inputProps={{ "aria-label": "search", required: true }}
-                  onChange={(event) => setQuery(event.target.value)}
+                  onChange={(event) => {setQuery(event.target.value); setInput('');}}
                 />
               </Search>
-            </form>
           </Toolbar>
         </AppBar>
       </Box>

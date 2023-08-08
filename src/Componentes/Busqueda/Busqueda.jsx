@@ -11,6 +11,7 @@ const Busqueda = () => {
     const api = "575bcbc20d4282f26a0fda173e2568e3"
     const [peli, setPeli] = useState([])
     const [page, setPage] = useState(1)
+    const [barra, setBarra] = useState("")
 
     const navigate = useNavigate()
 
@@ -22,8 +23,23 @@ const Busqueda = () => {
         console.log(data)
         setPeli(data.results)
         setPage(page)
+        setBarra(query)
       })
     }, [])
+
+    const busca = async (query) => {
+      return await fetch(`${api_url}/search/movie?query=${query}&api_key=${api}&language=es-ES`)
+      .then((res) =>res.json())
+      .then(data =>{
+        console.log(data)
+        setPeli(data.results)
+        setPage(page)
+        setBarra(query)
+      })
+     } 
+     if(query !== barra){
+      busca(query)
+    }
  
   return (
     
