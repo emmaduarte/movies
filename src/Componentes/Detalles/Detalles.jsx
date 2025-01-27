@@ -237,8 +237,6 @@ const Detalles = () => {
                   )}
                   
                   
-                  
-                  
                   <Stack
                     direction="row"
                     spacing={2}
