@@ -187,24 +187,58 @@ const Detalles = () => {
                       </Fade>
                     </Modal>
                   </Typography>
+                  {peli.overview ? (
+                    <>
                   <Typography variant="h6" padding={"15px 0"} gutterBottom>
                     Vista general
                   </Typography>
                   <Typography variant="body1" gutterBottom>
                     {peli.overview}
                   </Typography>
-                  {/*<Typography variant="subtitle1" gutterBottom>
+                  </>
+                  ) : (
+                    ""
+                  )}
+                  {peli.popularity ? (
+                    <>
+                  <Typography variant="subtitle1" gutterBottom>
                     Popularidad: {peli.popularity}
                   </Typography>
+                  </>
+                  ) : (
+                    ""
+                  )}
+                  {peli.budget ? (
+                    <>
                   <Typography variant="subtitle1" gutterBottom>
                     Presupuesto: $ {peli.budget}
                   </Typography>
+                  </>
+                  ) : (
+                    ""
+                  )}
+                  {peli.revenue ? (
+                    <>
                   <Typography variant="subtitle1" gutterBottom>
                     Ganancia: $ {peli.revenue}
                   </Typography>
+                  </>
+                  ) : (
+                    ""
+                  )}
+                  {peli.vote_average ? (
+                    <>
                   <Typography variant="subtitle1" gutterBottom>
                     Voto promedio: {peli.vote_average}
-                      </Typography>*/}
+                      </Typography>
+                  </>
+                  ) : (
+                    ""
+                  )}
+                  
+                  
+                  
+                  
                   <Stack
                     direction="row"
                     spacing={2}
