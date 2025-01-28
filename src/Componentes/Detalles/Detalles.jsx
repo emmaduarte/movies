@@ -12,11 +12,11 @@ import Backdrop from "@mui/material/Backdrop";
 import Fade from "@mui/material/Fade";
 //carrusel
 import Carousel from "better-react-carousel";
-//tarjeta del carrusel
+/*tarjeta del carrusel
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import { CardActionArea } from "@mui/material";
+import { CardActionArea } from "@mui/material";*/
 // seccion imagenes
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
