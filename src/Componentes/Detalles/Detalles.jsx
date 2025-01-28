@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Backdrop from "@mui/material/Backdrop";
 import Fade from "@mui/material/Fade";
-//carrusel
+/*carrusel
 import Carousel from "better-react-carousel";
 /*tarjeta del carrusel
 import Card from "@mui/material/Card";
