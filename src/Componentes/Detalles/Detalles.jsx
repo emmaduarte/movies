@@ -265,6 +265,7 @@ const Detalles = () => {
           </Grid>
         </Grid>
       </Container>
+      {/* 
       <Carousel
         cols={9}
         rows={1}
@@ -329,7 +330,7 @@ const Detalles = () => {
 
           
         ))}
-      </Carousel>
+      </Carousel>*/}
 
       <div className="boton">
         <button onClick={() => navigate(-1)}>Volver</button>
