@@ -8,11 +8,13 @@ import Busqueda from "./Componentes/Busqueda/Busqueda";
 const App = () => {
   return (
       <BrowserRouter basename="/movies">
-        <Nav />
+        
         <Routes>
-          <Route path="/" element={<Listado />} />
-          <Route path="/Detalles/:title/:id" element={<Detalles />} />
-          <Route path="/Busqueda/:query" element={<Busqueda />} />
+          <Route path="/" element={<Nav />}>
+            <Route index element={<Listado />} />
+            <Route path="/Detalles/:title/:id" element={<Detalles />} />
+            <Route path="/Busqueda/:query" element={<Busqueda />} />
+          </Route>
         </Routes>
       </BrowserRouter>
   );

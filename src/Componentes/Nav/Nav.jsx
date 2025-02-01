@@ -10,7 +10,7 @@ import InputBase from "@mui/material/InputBase";
 import CottageIcon from "@mui/icons-material/Cottage";
 import SearchIcon from "@mui/icons-material/Search";
 import { auto } from "@popperjs/core";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, Outlet } from "react-router-dom";
 
 {
   /*Estilos para el navbar de material*/
@@ -114,12 +114,13 @@ const Nav = () => {
                   required
                   autoComplete="off"
                   inputProps={{ "aria-label": "search", required: true }}
-                  onChange={(event) => {setQuery(event.target.value); setInput('');}}
+                  onChange={(event) => {setInput(event.target.value); setQuery(input);}}
                 />
               </Search>
           </Toolbar>
         </AppBar>
       </Box>
+      <Outlet />
     </>
   );
 };
