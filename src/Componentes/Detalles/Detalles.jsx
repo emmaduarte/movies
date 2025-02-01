@@ -10,6 +10,8 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Backdrop from "@mui/material/Backdrop";
 import Fade from "@mui/material/Fade";
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 /*carrusel
 import Carousel from "better-react-carousel";
 /*tarjeta del carrusel
@@ -28,6 +30,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
+import silueta from "../../assets/silueta generico.jpg"
 
 const style = {
   position: "absolute",
@@ -96,6 +99,13 @@ const Detalles = () => {
         }
       });
   }, []);
+
+  const responsive = {
+    0: { items: 2 },
+    568: { items: 3 },
+    700: {items: 5},
+    1024: { items: 8 },
+};
 
   return (
     <section id="detalles">
@@ -265,77 +275,63 @@ const Detalles = () => {
           </Grid>
         </Grid>
       </Container>
-      {/* 
-      <Carousel
-        cols={9}
-        rows={1}
-        gap={10}
-        loop
-        scrollSnap={true}
-        className="carusel"
-        responsiveLayout={[
-          {
-            breakpoint: 1360,
-            cols: 7,
-            rows: 1,
-            gap: 10,
-            loop: true,
-          },
-          {
-            breakpoint: 1100,
-            cols: 6,
-            rows: 1,
-            gap: 10,
-            loop: true,
-          },
-          {
-            breakpoint: 900,
-            cols: 5,
-            rows: 1,
-            gap: 10,
-            loop: true,
-          },
-          {
-            breakpoint: 766,
-            cols: 3,
-            rows: 1,
-            gap: 10,
-            loop: true,
-          },
-        ]}
-      >
-        {credi?.map((item) => (
-          
-            item.profile_path ? (
-            <Carousel.Item className="carusel" key={item.id}>
-              <img
-                height="200px"
-                className="carusel-img"
-                src={`${image_url + item.profile_path}`}
-              />
-              <Typography
-                gutterBottom
-                variant="h6"
-                component="div"
-                color="#ececff"
-              >
-                {item.original_name}
-              </Typography>
-              <Typography variant="body2" color="#ececff">
-                {item.character}
-              </Typography>
-            </Carousel.Item>)
-            :
-            (null)
+      
+      <AliceCarousel mouseTracking
 
+      items={credi?.map((item) => (
           
-        ))}
-      </Carousel>*/}
+          item.profile_path ? (
+            <>
+            <img
+              height="200px"
+              className="carusel-img"
+              src={`${image_url + item.profile_path}`}
+            />
+            <Typography
+              gutterBottom
+              variant="h6"
+              component="div"
+              color="#ececff"
+              padding={"0 5px"}
+            >
+              {item.original_name}
+            </Typography>
+            <Typography variant="body2" color="#ececff" padding={"0 5px"}>
+              {item.character}
+            </Typography>
+            </>
+            )
+          :
+          (<>
+          
+          <img
+              height="200px"
+              className="carusel-img"
+              src={silueta}
+            />
+          <Typography
+            gutterBottom
+            variant="h6"
+            component="div"
+            color="#ececff"
+            padding={"0 5px"}
+          >
+            {item.original_name}
+          </Typography>
+          <Typography variant="body2" color="#ececff" padding={"0 5px"}>
+            {item.character}
+          </Typography>
+          </>)
+
+        
+      ))}
+       responsive={responsive}
+       disableDotsControls= "true"
+      />
 
       <div className="boton">
         <button onClick={() => navigate(-1)}>Volver</button>
       </div>
-      {/*</div>*/}
     </section>
   );
 };

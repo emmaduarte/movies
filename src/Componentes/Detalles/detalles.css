@@ -66,6 +66,8 @@
 
 .carusel-img{
     border-radius: 15px;
+    max-width: 133px;
+    object-fit: cover;
 }
 
 .boton{
@@ -98,11 +100,5 @@
     padding-bottom: "56.25%"  /*16:9 */;
     height: 0;    
     margin: 0;
-}
-
-@media screen and (max-width: 767px){
-
-.daGMts {
-    grid-template-columns: repeat(3,1fr) !important;}
 }
 
