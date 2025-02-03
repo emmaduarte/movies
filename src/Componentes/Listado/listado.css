@@ -14,9 +14,9 @@
 }
 
 .galeria{
-    padding-top: 30px;
+    padding-top: 50px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(10rem, 14rem));
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 15rem)) !important;
     grid-template-rows: 1.1fr;
     align-items: center;
     justify-content: center;

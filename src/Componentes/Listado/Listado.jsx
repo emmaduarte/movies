@@ -45,13 +45,6 @@ export default function Listado() {
               />
               <div className="titulo">{item.title}</div>
               <div>
-                {/*<button
-                  className="boton1"
-                  onClick={() => navigate(`/Detalles/${item.title}/${item.id}`)}
-                >
-                  {/*<a href={`/movies/Detalles/${item.title}/${item.id}`}> Informacion</a>/}
-                  Informacion
-                </button>*/}
                   <Link to={`/Detalles/${item.title}/${item.id}`}>Informacion</Link>
               </div>
             </div>

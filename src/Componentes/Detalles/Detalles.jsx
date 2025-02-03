@@ -97,7 +97,7 @@ const Detalles = () => {
 
   return (
     <section id="detalles">
-      <Container sx={{ paddingTop: "24px", paddingBottom: "24px" }}>
+      <Container sx={{ paddingTop: "75px", paddingBottom: "24px" }}>
         <Grid container>
           <Grid item xs={12} md={5} lg={4}>
             <Container sx={{ justifyContent: "center", display: "flex" }}>
