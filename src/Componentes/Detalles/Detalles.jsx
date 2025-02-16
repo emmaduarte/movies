@@ -318,7 +318,7 @@ const Detalles = () => {
       />
 
       <div className="boton">
-        <button onClick={() => navigate(-1)}>Volver</button>
+        <button className="butnav" onClick={() => navigate(-1)}>Volver</button>
       </div>
     </section>
   );

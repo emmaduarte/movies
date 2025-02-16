@@ -27,8 +27,8 @@ const Busqueda = () => {
       })
     }, [])
 
-    const busca = async (query) => {
-      return await fetch(`${api_url}/search/movie?query=${query}&api_key=${api}&language=es-ES`)
+    const busca = async (query, page) => {
+      return await fetch(`${api_url}/search/movie?query=${query}&api_key=${api}&language=es-ES&page=${page}`)
       .then((res) =>res.json())
       .then(data =>{
         console.log(data)
@@ -38,7 +38,7 @@ const Busqueda = () => {
       })
      } 
      if(query !== barra){
-      busca(query)
+      busca(query, page)
     }
  
   return (
@@ -59,9 +59,9 @@ const Busqueda = () => {
               
           </div>
           <div className="pagina">
-                <button value={page} name="pagina" onClick={() => lista((page === 1)? page : page-1)}>Anterior</button>
+                <button value={page} name="pagina" onClick={() => busca(query, ((page === 1)? page : page-1))}>Anterior</button>
                   <p>{page}</p>
-                <button value={page} name="pagina" onClick={() => lista(page+1)}>Siguente</button>
+                <button value={page} name="pagina" onClick={() => busca(query, (page+1))}>Siguente</button>
           </div>
           
         </section>

@@ -1,0 +1,24 @@
+#home{
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    height: auto;
+    
+}
+
+.titulo{
+    width: 100%;
+    font-size: 25px;
+    margin: 10px 0 ;
+    text-align: center;
+}
+.peliculas{
+    margin: 0;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 0.75fr repeat(1, 80px);
+    align-items: center;
+    font-size: 20px;
+    color: #ececff;
+}
