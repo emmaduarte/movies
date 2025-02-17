@@ -55,12 +55,12 @@ const Home = () => {
                 <Container sx={{ paddingTop: "75px", paddingBottom: "24px" }}>
                     <Typography variant="h5" padding={"15px 0"} color={"white"} gutterBottom>
                         Populares
-                        <Link to={`/Listado/popular/${page}`}>Ver todas</Link>
+                        <Link className='ver' to={`/Listado/movie/popular/${page}`}>Ver mas</Link>
                     </Typography>
                     <AliceCarousel mouseTracking
                         items={pelis.map((item) => (
-                            <div key={item.id} className="peliculas">
-                                    <Link to={`/Detalles/${item.title}/${item.id}`}>
+                            <div key={item.id} className="pelicula">
+                                    <Link to={`/movie/Detalles/${item.title}/${item.id}`}>
                                 <img
                                     src={`${image_url + item.poster_path}`}
                                     alt="Imagen pelicula"
@@ -77,12 +77,12 @@ const Home = () => {
                     />
                     <Typography variant="h5" padding={"15px 0"} color={"white"} gutterBottom>
                         Mejores Valorados
-                        <Link to={`/Listado/top_rated/${page}`}>Ver todas</Link>
+                        <Link className='ver' to={`/Listado/movie/top_rated/${page}`}>Ver mas</Link>
                     </Typography>
                     <AliceCarousel mouseTracking
                         items={top.map((item) => (
-                            <div key={item.id} className="peliculas">
-                                <Link to={`/Detalles/${item.title}/${item.id}`}>
+                            <div key={item.id} className="pelicula">
+                                <Link to={`/movie/Detalles/${item.title}/${item.id}`}>
                                 <img
                                     src={`${image_url + item.poster_path}`}
                                     alt="Imagen pelicula"
@@ -100,12 +100,12 @@ const Home = () => {
                     />
                     <Typography variant="h5" padding={"15px 0"} color={"white"} gutterBottom>
                         Series
-                        <Link to={`/Listado/tv/${page}}`}>Ver todas</Link>
+                        <Link className='ver' to={`/Listado/tv/popular/${page}}`}>Ver mas</Link>
                     </Typography>
                     <AliceCarousel mouseTracking
                         items={series.map((item) => (
-                            <div key={item.id} className="peliculas">
-                                <Link to={`/Detalles/${item.title}/${item.id}`}>
+                            <div key={item.id} className="pelicula">
+                                <Link to={`/tv/Detalles/${item.title}/${item.id}`}>
                                 <img
                                     src={`${image_url + item.poster_path}`}
                                     alt="Imagen pelicula"
@@ -113,7 +113,7 @@ const Home = () => {
                                     />
                                     </Link>
                                 <Typography variant="subtitle1" padding={"15px 0"} >
-                                    {item.title}
+                                    {item.name}
                                 </Typography>
                             </div>
                         ))}

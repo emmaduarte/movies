@@ -35,7 +35,7 @@ const style = {
 };
 
 const Detalles = () => {
-  const { id } = useParams();
+  const { id , tipo} = useParams();
   const image_url = "https://image.tmdb.org/t/p/w500";
   const api_url = "https://api.themoviedb.org/3";
   const api = "575bcbc20d4282f26a0fda173e2568e3";
@@ -52,7 +52,7 @@ const Detalles = () => {
     /*Llamado a la api de los detalles */
   }
   useEffect(() => {
-    fetch(`${api_url}/movie/${id}?api_key=${api}&language=es-ES`)
+    fetch(`${api_url}/${tipo}/${id}?api_key=${api}&language=es-ES`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -64,7 +64,7 @@ const Detalles = () => {
     /*Llamado a la api de los creditos */
   }
   useEffect(() => {
-    fetch(`${api_url}/movie/${id}/credits?api_key=${api}&language=es-ES`)
+    fetch(`${api_url}/${tipo}/${id}/credits?api_key=${api}&language=es-ES`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -76,7 +76,7 @@ const Detalles = () => {
     /*Llamado a la api de los videos para el trailer*/
   }
   useEffect(() => {
-    fetch(`${api_url}/movie/${id}/videos?api_key=${api}&language=es-ES`)
+    fetch(`${api_url}/${tipo}/${id}/videos?api_key=${api}&language=es-ES`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

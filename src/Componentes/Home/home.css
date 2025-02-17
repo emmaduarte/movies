@@ -12,7 +12,7 @@
     margin: 10px 0 ;
     text-align: center;
 }
-.peliculas{
+.pelicula{
     margin: 0;
     padding: 5px;
     display: grid;
@@ -21,4 +21,12 @@
     align-items: center;
     font-size: 20px;
     color: #ececff;
+}
+
+.ver{
+    margin-left: 15px;
+    padding: 0px 5px;
+    font-size: 15px;
+    color: #473af8;
+    text-decoration: none;
 }
