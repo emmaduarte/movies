@@ -7,10 +7,10 @@ export default function Listado() {
   const image_url = "https://image.tmdb.org/t/p/w500";
   const api_url = "https://api.themoviedb.org/3";
   const api = "575bcbc20d4282f26a0fda173e2568e3";
-  const [page, setPage] = useState(1);
   const {tipo} = useParams()
   const {categoria} = useParams()
   const {pag} = useParams()
+  const [page, setPage] = useState(parseInt(pag, 10));
 
   const navigate = useNavigate();
 
@@ -63,7 +63,7 @@ export default function Listado() {
             Anterior
           </button> */}
           <Link className="boton1" onClick={() => lista(page === 1 ? page : page - 1)} to={`/Listado/${tipo}/${categoria}/${page === 1 ? page : page - 1}`}>Anterior</Link>
-          <p>{page}</p>
+          <p>{pag}</p>
           <Link className="boton1" onClick={() => lista(page + 1)} to={`/Listado/${tipo}/${categoria}/${page + 1}`}>Siguente</Link>
           {/* <button value={page} name="pagina" onClick={() => lista(page + 1)}>
             Siguente
