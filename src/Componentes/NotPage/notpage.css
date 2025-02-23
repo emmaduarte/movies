@@ -1,0 +1,12 @@
+.notfound{
+    display: flex;
+    position: relative;
+    z-index: 20;
+    height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .notfound {
+      width: 100%;
+    }
+  }

@@ -102,3 +102,10 @@
     margin: 0;
 }
 
+.sintrailer{
+    background-image: url(../../assets/error.jpg);
+    background-size: contain;
+    height: 200px;
+    
+}
+

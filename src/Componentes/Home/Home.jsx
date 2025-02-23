@@ -4,7 +4,7 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Home = () => {
@@ -100,7 +100,7 @@ const Home = () => {
                     />
                     <Typography variant="h5" padding={"15px 0"} color={"white"} gutterBottom>
                         Series
-                        <Link className='ver' to={`/Listado/tv/popular/${page}}`}>Ver mas</Link>
+                        <Link className='ver' to={`/Listado/tv/popular/${page}`}>Ver mas</Link>
                     </Typography>
                     <AliceCarousel mouseTracking
                         items={series.map((item) => (

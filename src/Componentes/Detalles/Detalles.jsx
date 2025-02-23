@@ -10,6 +10,8 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Backdrop from "@mui/material/Backdrop";
 import Fade from "@mui/material/Fade";
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 
 //carrusel
 import AliceCarousel from 'react-alice-carousel';
@@ -35,7 +37,7 @@ const style = {
 };
 
 const Detalles = () => {
-  const { id , tipo} = useParams();
+  const { id, tipo } = useParams();
   const image_url = "https://image.tmdb.org/t/p/w500";
   const api_url = "https://api.themoviedb.org/3";
   const api = "575bcbc20d4282f26a0fda173e2568e3";
@@ -80,7 +82,7 @@ const Detalles = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.results) {
+        if (data.results.length > 1) {
           const trailer1 = data.results.find((vid) => vid.type === "Trailer");
           console.log(trailer1);
           setTrailer(trailer1 ? trailer1.key : data.results[0].key);
@@ -91,9 +93,9 @@ const Detalles = () => {
   const responsive = {
     0: { items: 2 },
     568: { items: 3 },
-    700: {items: 5},
+    700: { items: 5 },
     1024: { items: 8 },
-};
+  };
 
   return (
     <section id="detalles">
@@ -179,7 +181,11 @@ const Detalles = () => {
                               </div>
                             </>
                           ) : (
-                            ""
+                            <Alert severity="error">
+                              <AlertTitle>Archivo no encontrado</AlertTitle>
+                              Lo sentimos el trailer no esta disponible
+                            </Alert>
+
                           )}
                         </Box>
                       </Fade>
@@ -187,54 +193,54 @@ const Detalles = () => {
                   </Typography>
                   {peli.overview ? (
                     <>
-                  <Typography variant="h6" padding={"15px 0"} gutterBottom>
-                    Vista general
-                  </Typography>
-                  <Typography variant="body1" gutterBottom>
-                    {peli.overview}
-                  </Typography>
-                  </>
+                      <Typography variant="h6" padding={"15px 0"} gutterBottom>
+                        Vista general
+                      </Typography>
+                      <Typography variant="body1" gutterBottom>
+                        {peli.overview}
+                      </Typography>
+                    </>
                   ) : (
                     ""
                   )}
                   {peli.popularity ? (
                     <>
-                  <Typography variant="subtitle1" gutterBottom>
-                    Popularidad: {peli.popularity}
-                  </Typography>
-                  </>
+                      <Typography variant="subtitle1" gutterBottom>
+                        Popularidad: {peli.popularity}
+                      </Typography>
+                    </>
                   ) : (
                     ""
                   )}
                   {peli.budget ? (
                     <>
-                  <Typography variant="subtitle1" gutterBottom>
-                    Presupuesto: $ {peli.budget}
-                  </Typography>
-                  </>
+                      <Typography variant="subtitle1" gutterBottom>
+                        Presupuesto: $ {peli.budget}
+                      </Typography>
+                    </>
                   ) : (
                     ""
                   )}
                   {peli.revenue ? (
                     <>
-                  <Typography variant="subtitle1" gutterBottom>
-                    Ganancia: $ {peli.revenue}
-                  </Typography>
-                  </>
+                      <Typography variant="subtitle1" gutterBottom>
+                        Ganancia: $ {peli.revenue}
+                      </Typography>
+                    </>
                   ) : (
                     ""
                   )}
                   {peli.vote_average ? (
                     <>
-                  <Typography variant="subtitle1" gutterBottom>
-                    Voto promedio: {peli.vote_average}
+                      <Typography variant="subtitle1" gutterBottom>
+                        Voto promedio: {peli.vote_average}
                       </Typography>
-                  </>
+                    </>
                   ) : (
                     ""
                   )}
-                  
-                  
+
+
                   <Stack
                     direction="row"
                     spacing={2}
@@ -263,58 +269,58 @@ const Detalles = () => {
           </Grid>
         </Grid>
       </Container>
-      
+
       <AliceCarousel mouseTracking
 
-      items={credi?.map((item) => (
-          
+        items={credi?.map((item) => (
+
           item.profile_path ? (
             <>
-            <img
-              height="200px"
-              className="carusel-img"
-              src={`${image_url + item.profile_path}`}
-            />
-            <Typography
-              gutterBottom
-              variant="h6"
-              component="div"
-              color="#ececff"
-              padding={"0 5px"}
-            >
-              {item.original_name}
-            </Typography>
-            <Typography variant="body2" color="#ececff" padding={"0 5px"}>
-              {item.character}
-            </Typography>
+              <img
+                height="200px"
+                className="carusel-img"
+                src={`${image_url + item.profile_path}`}
+              />
+              <Typography
+                gutterBottom
+                variant="h6"
+                component="div"
+                color="#ececff"
+                padding={"0 5px"}
+              >
+                {item.original_name}
+              </Typography>
+              <Typography variant="body2" color="#ececff" padding={"0 5px"}>
+                {item.character}
+              </Typography>
             </>
-            )
-          :
-          (<>
-          
-          <img
-              height="200px"
-              className="carusel-img"
-              src={silueta}
-            />
-          <Typography
-            gutterBottom
-            variant="h6"
-            component="div"
-            color="#ececff"
-            padding={"0 5px"}
-          >
-            {item.original_name}
-          </Typography>
-          <Typography variant="body2" color="#ececff" padding={"0 5px"}>
-            {item.character}
-          </Typography>
-          </>)
+          )
+            :
+            (<>
 
-        
-      ))}
-       responsive={responsive}
-       disableDotsControls= "true"
+              <img
+                height="200px"
+                className="carusel-img"
+                src={silueta}
+              />
+              <Typography
+                gutterBottom
+                variant="h6"
+                component="div"
+                color="#ececff"
+                padding={"0 5px"}
+              >
+                {item.original_name}
+              </Typography>
+              <Typography variant="body2" color="#ececff" padding={"0 5px"}>
+                {item.character}
+              </Typography>
+            </>)
+
+
+        ))}
+        responsive={responsive}
+        disableDotsControls="true"
       />
 
       <div className="boton">

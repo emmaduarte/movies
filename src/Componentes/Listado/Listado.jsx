@@ -48,7 +48,7 @@ export default function Listado() {
               />
               <div className="titulo">{item.title? item.title : item.name}</div>
               <div>
-                  <Link className="boton1" to={`/${tipo}/Detalles/${item.title}/${item.id}`} preventScrollReset>Informacion</Link>
+                  <Link className="boton1" to={`/${tipo}/Detalles/${item.title}/${item.id}`}>Informacion</Link>
               </div>
             </div>
           ))}
